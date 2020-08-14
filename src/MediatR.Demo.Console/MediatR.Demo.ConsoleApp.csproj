@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>MediatR.Demo.ConsoleApp</AssemblyName>
+    <RootNamespace>MediatR.Demo.ConsoleApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediatR.Demo.Notifications\MediatR.Demo.Notifications.csproj" />
+    <ProjectReference Include="..\MediatR.Demo.Requests\MediatR.Demo.Requests.csproj" />
+  </ItemGroup>
+
+</Project>

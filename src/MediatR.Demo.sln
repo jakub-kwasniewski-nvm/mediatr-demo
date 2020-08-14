@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Demo.ConsoleApp", "MediatR.Demo.Console\MediatR.Demo.ConsoleApp.csproj", "{CF88A718-DD52-4958-8B1E-16438FDC4E18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Demo.ConsoleApp", "MediatR.Demo.ConsoleApp\MediatR.Demo.ConsoleApp.csproj", "{CF88A718-DD52-4958-8B1E-16438FDC4E18}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Demo.Requests", "MediatR.Demo.Requests\MediatR.Demo.Requests.csproj", "{8042EE43-982D-4B5A-846C-CE4C8F3F4E8F}"
 EndProject
@@ -11,7 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1", "1", "{E3EE1A3C-65AB-43
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2", "2", "{98CF8CA8-8648-443B-A8C1-4B8665626A6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR.Demo.Notifications", "MediatR.Demo.Notifications\MediatR.Demo.Notifications.csproj", "{74926EE7-E065-434F-8659-EB391E78D927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Demo.Notifications", "MediatR.Demo.Notifications\MediatR.Demo.Notifications.csproj", "{74926EE7-E065-434F-8659-EB391E78D927}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3", "3", "{F1101B0E-6307-4C50-A81B-13C3D6266B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR.Demo.Processors", "MediatR.Demo.Processors\MediatR.Demo.Processors.csproj", "{C0F18B59-1A86-4503-AA24-C30A999B667C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4", "4", "{0EC0AEBE-B8B5-4662-BD03-8732D5620101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR.Demo.Behaviors", "MediatR.Demo.Behaviors\MediatR.Demo.Behaviors.csproj", "{8E57BB70-05B0-4EE0-8F43-6B3F7F195A7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +39,14 @@ Global
 		{74926EE7-E065-434F-8659-EB391E78D927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74926EE7-E065-434F-8659-EB391E78D927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74926EE7-E065-434F-8659-EB391E78D927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F18B59-1A86-4503-AA24-C30A999B667C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F18B59-1A86-4503-AA24-C30A999B667C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F18B59-1A86-4503-AA24-C30A999B667C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F18B59-1A86-4503-AA24-C30A999B667C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E57BB70-05B0-4EE0-8F43-6B3F7F195A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E57BB70-05B0-4EE0-8F43-6B3F7F195A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E57BB70-05B0-4EE0-8F43-6B3F7F195A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E57BB70-05B0-4EE0-8F43-6B3F7F195A7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +54,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8042EE43-982D-4B5A-846C-CE4C8F3F4E8F} = {E3EE1A3C-65AB-4380-BBE9-94ACC38FF9E6}
 		{74926EE7-E065-434F-8659-EB391E78D927} = {98CF8CA8-8648-443B-A8C1-4B8665626A6F}
+		{C0F18B59-1A86-4503-AA24-C30A999B667C} = {F1101B0E-6307-4C50-A81B-13C3D6266B20}
+		{8E57BB70-05B0-4EE0-8F43-6B3F7F195A7E} = {0EC0AEBE-B8B5-4662-BD03-8732D5620101}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B62D362-3408-4079-8B17-A73C81A51431}

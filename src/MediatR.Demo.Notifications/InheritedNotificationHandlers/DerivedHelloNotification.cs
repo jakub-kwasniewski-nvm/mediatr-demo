@@ -2,7 +2,7 @@
 {
     public class DerivedHelloNotification : BaseHelloNotification
     {
-        public DerivedHelloNotification(string name) : base(name.ToUpper())
+        public DerivedHelloNotification(string name) : base(name)
         {
         }
     }

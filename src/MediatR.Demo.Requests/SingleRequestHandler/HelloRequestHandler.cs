@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatR.Demo.Requests.Hello
+namespace MediatR.Demo.Requests.SingleRequestHandler
 {
     public class HelloRequestHandler : IRequestHandler<HelloRequest, string>
     {

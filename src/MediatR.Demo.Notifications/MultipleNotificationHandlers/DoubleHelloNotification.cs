@@ -1,4 +1,4 @@
-﻿namespace MediatR.Demo.Notifications.DoubleHello
+﻿namespace MediatR.Demo.Notifications.MultipleNotificationHandlers
 {
     public class DoubleHelloNotification : INotification
     {

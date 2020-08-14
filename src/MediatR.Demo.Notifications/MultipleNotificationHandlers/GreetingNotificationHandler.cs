@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatR.Demo.Notifications.DoubleHello
+namespace MediatR.Demo.Notifications.MultipleNotificationHandlers
 {
     public class GreetingNotificationHandler : INotificationHandler<DoubleHelloNotification>
     {

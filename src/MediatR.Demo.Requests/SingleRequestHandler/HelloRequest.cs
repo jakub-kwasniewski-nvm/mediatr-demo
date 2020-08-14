@@ -1,4 +1,4 @@
-﻿namespace MediatR.Demo.Requests.Hello
+﻿namespace MediatR.Demo.Requests.SingleRequestHandler
 {
     public class HelloRequest : IRequest<string>
     {

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using MediatR.Demo.Notifications.DoubleHello;
+using MediatR.Demo.Notifications.Inheritance;
 using MediatR.Demo.Requests.DoubleHello;
 using MediatR.Demo.Requests.Hello;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,8 @@ namespace MediatR.Demo.ConsoleApp
             await SendAndWait(() => mediator.Send(new HelloRequest(userName)));
             await SendAndWait(() => mediator.Send(new DoubleHelloRequest(userName)));
             await PublishAndWait(() => mediator.Publish(new DoubleHelloNotification(userName)));
+            await PublishAndWait(() => mediator.Publish(new BaseHelloNotification(userName)));
+            await PublishAndWait(() => mediator.Publish(new DerivedHelloNotification(userName)));
         }
 
         private static string GetUserName()

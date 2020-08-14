@@ -1,4 +1,4 @@
-﻿namespace MediatR.Demo.Requests.DoubleHello
+﻿namespace MediatR.Demo.Requests.MultipleRequestHandlers
 {
     public class DoubleHelloRequest : IRequest<string>
     {

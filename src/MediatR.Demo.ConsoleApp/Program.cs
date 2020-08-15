@@ -4,6 +4,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using MediatR.Demo.Notifications.InheritedNotificationHandlers;
 using MediatR.Demo.Notifications.MultipleNotificationHandlers;
+using MediatR.Demo.Processors.PostProcessors;
+using MediatR.Demo.Processors.PreProcessors;
 using MediatR.Demo.Requests.MultipleRequestHandlers;
 using MediatR.Demo.Requests.SingleRequestHandler;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +27,11 @@ namespace MediatR.Demo.ConsoleApp
             await PublishAndWait(() => mediator.Publish(new BaseHelloNotification(userName)));
             await PublishAndWait(() => mediator.Publish(new DerivedHelloNotification(userName)));
             // 3 - Processors
+            await SendAndWait(() => mediator.Send(new PreProcessedHelloRequest(userName)));
+            await SendAndWait(() => mediator.Send(new PostProcessedHelloRequest(userName)).ContinueWith(response => response.Result.Message));
             // 4 - Behaviors
+
+            // 5 - Exceptions maybe?
         }
 
         private static string GetUserName()

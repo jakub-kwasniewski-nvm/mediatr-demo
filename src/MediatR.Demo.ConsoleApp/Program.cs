@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using MediatR.Demo.Behaviors.SpecificRequestBehaviors;
 using MediatR.Demo.Notifications.InheritedNotificationHandlers;
 using MediatR.Demo.Notifications.MultipleNotificationHandlers;
 using MediatR.Demo.Processors.PostProcessors;
@@ -30,7 +31,7 @@ namespace MediatR.Demo.ConsoleApp
             await SendAndWait(() => mediator.Send(new PreProcessedHelloRequest(userName)));
             await SendAndWait(() => mediator.Send(new PostProcessedHelloRequest(userName)).ContinueWith(response => response.Result.Message));
             // 4 - Behaviors
-
+            await SendAndWait(() => mediator.Send(new BehaviorWrappedHelloRequest(userName)));
             // 5 - Exceptions maybe?
         }
 
@@ -46,6 +47,8 @@ namespace MediatR.Demo.ConsoleApp
 
             services.AddMediatR(
                 Assembly.GetExecutingAssembly().GetReferencedAssemblies().Select(Assembly.Load).ToArray());
+
+            services.AddScoped<IPipelineBehavior<BehaviorWrappedHelloRequest, string>, BehaviorWrappedHelloRequestPipelineBehavior>();
 
             return services.BuildServiceProvider().GetRequiredService<IMediator>();
         }

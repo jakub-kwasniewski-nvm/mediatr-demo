@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MediatR.Demo.Behaviors\MediatR.Demo.Behaviors.csproj" />
     <ProjectReference Include="..\MediatR.Demo.Notifications\MediatR.Demo.Notifications.csproj" />
     <ProjectReference Include="..\MediatR.Demo.Processors\MediatR.Demo.Processors.csproj" />
     <ProjectReference Include="..\MediatR.Demo.Requests\MediatR.Demo.Requests.csproj" />

@@ -2,12 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MediatR.Demo.Behaviors.SpecificRequestBehaviors
+namespace MediatR.Demo.Behaviors.SpecificBehaviors
 {
-    public class BehaviorWrappedHelloRequestPipelineBehavior : IPipelineBehavior<BehaviorWrappedHelloRequest, string>
+    public class SpecificBehaviorWrappedHelloRequestPipelineBehavior : IPipelineBehavior<SpecificBehaviorWrappedHelloRequest, string>
     {
         public async Task<string> Handle(
-            BehaviorWrappedHelloRequest request,
+            SpecificBehaviorWrappedHelloRequest request,
             CancellationToken cancellationToken,
             RequestHandlerDelegate<string> next)
         {

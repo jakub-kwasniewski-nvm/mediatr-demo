@@ -4,12 +4,14 @@ using System.Reflection;
 using System.Threading.Tasks;
 using MediatR.Demo.Behaviors.GenericRequestBehaviors;
 using MediatR.Demo.Behaviors.SpecificBehaviors;
+using MediatR.Demo.Exceptions;
 using MediatR.Demo.Notifications.InheritedNotificationHandlers;
 using MediatR.Demo.Notifications.MultipleNotificationHandlers;
 using MediatR.Demo.Processors.PostProcessors;
 using MediatR.Demo.Processors.PreProcessors;
 using MediatR.Demo.Requests.MultipleRequestHandlers;
 using MediatR.Demo.Requests.SingleRequestHandler;
+using MediatR.Pipeline;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MediatR.Demo.ConsoleApp
@@ -33,7 +35,8 @@ namespace MediatR.Demo.ConsoleApp
             await SendAndWait(() => mediator.Send(new PostProcessedHelloRequest(userName)).ContinueWith(response => response.Result.Message));
             // 4 - Behaviors
             await SendAndWait(() => mediator.Send(new SpecificBehaviorWrappedHelloRequest(userName)));
-            // 5 - Exceptions maybe?
+            // 5 - Exceptions
+            await SendAndWait(() => mediator.Send(new ExceptionalHelloRequest(userName)));
         }
 
         private static string GetUserName()
@@ -51,6 +54,8 @@ namespace MediatR.Demo.ConsoleApp
 
             services.AddScoped<IPipelineBehavior<SpecificBehaviorWrappedHelloRequest, string>, SpecificBehaviorWrappedHelloRequestPipelineBehavior>();
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(GenericPipelineBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestExceptionProcessorBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(RequestExceptionActionProcessorBehavior<,>));
 
             return services.BuildServiceProvider().GetRequiredService<IMediator>();
         }

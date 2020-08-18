@@ -8,7 +8,7 @@ namespace MediatR.Demo.Notifications.InheritedNotificationHandlers
     {
         public Task Handle(DerivedHelloNotification notification, CancellationToken cancellationToken)
         {
-            Console.WriteLine($"Hello {notification.Name}! {nameof(DerivedHelloNotification)} greets you!");
+            Console.WriteLine($"Hello {notification.Name}! {nameof(DerivedHelloNotificationHandler)} greets you!");
 
             return Task.CompletedTask;
         }

@@ -8,7 +8,5 @@
         {
             Message = message;
         }
-
-        public static implicit operator string(PostProcessedHelloResponse response) => response.Message;
     }
 }
